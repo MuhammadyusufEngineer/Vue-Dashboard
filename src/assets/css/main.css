@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'regular';
+  src: url('/src/assets/font/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'rmedium';
+  src: url('/src/assets/font/Roboto-Medium.ttf');
+}
+
+@font-face {
+  color: red;
+  font-family: 'rbold';
+  src: url('/src/assets/font/Roboto-Bold.ttf');
+}
+
+.nav-item:hover img {
+  filter: brightness(50%);
+}
+
+.nav-item.router-link-active:hover img,
+.router-link-active img {
+  filter: brightness(200%);
+}
+
+.router-link-active {
+  background-color: #2563eb; 
+  position: relative;
+}
+
+.router-link-active:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -1.5vw;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 70%;
+  background-color: #2563eb;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  z-index: 10;
+}
+
+
+.period::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateX(-150%) translateY(-50%);
+  width: 2vw;
+  height: 2vw;
+  border-radius: 999px;
+  z-index: 20;
+  background: rgb(86, 59, 255);
+}
+
+@media (min-width: 768px){
+  .period::before {
+    width: 0.4vw;
+    height: 0.4vw;
+  }
+}
